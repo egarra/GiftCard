@@ -1,0 +1,4 @@
+# Ignore artifacts:
+build
+input.html
+./src/html/components/macro/input.html
