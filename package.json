@@ -1,9 +1,11 @@
 {
   "name": "gulp-starter-theme",
   "version": "4.0.0",
+  "homepage": "https://egarra.github.io/GiftCard",
   "scripts": {
     "start": "cross-env PORT=3000 gulp start --development",
-    "build": "gulp build --production"
+    "build": "gulp build --production",
+    "deploy": "gh-pages -d build"
   },
   "repository": "https://github.com/goitacademy/goit-global-landings",
   "devDependencies": {
@@ -14,6 +16,7 @@
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.7",
     "del": "8.0.0",
+    "gh-pages": "^6.3.0",
     "gulp": "4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-data": "^1.3.1",
@@ -43,3 +46,4 @@
     "just-validate": "^4.3.0"
   }
 }
+
