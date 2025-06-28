@@ -1,0 +1,31 @@
+{% set component = components.logo %}
+<!--  -->
+{% if s.id === "header" %}
+<a
+  class="block h-max w-max duration-300 hover:scale-105 hover:opacity-50 focus:scale-105 focus:opacity-50"
+  href="./"
+  title="{{component.link_logo_aria}}"
+  aria-label="{{component.link_logo_aria}}">
+  <img
+    src="./assets/images/logo.svg"
+    title="{{component.logo_aria}}"
+    alt="{{component.logo_aria}}"
+    width="84"
+    height="36"
+    loading="lazy" />
+</a>
+{% else %}
+<a
+  class="block h-max w-max opacity-50 duration-300 hover:scale-105 hover:opacity-100 focus:scale-105 focus:opacity-100"
+  href="./"
+  title="{{component.link_logo_aria}}"
+  aria-label="{{component.link_logo_aria}}">
+  <img
+    src="./assets/images/logo-footer.svg"
+    title="{{component.logo_aria}}"
+    alt="{{component.logo_aria}}"
+    width="84"
+    height="36"
+    loading="lazy" />
+</a>
+{% endif %}

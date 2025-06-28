@@ -1,0 +1,27 @@
+.leeloo {
+  @apply mx-auto overflow-hidden;
+
+  & iframe {
+    @apply mx-auto block;
+  }
+
+  & > div {
+    width: 100%;
+  }
+
+  & > div .leeloo-lgt-form-wrapper .leeloo-lgt-form {
+    width: 100% !important;
+  }
+
+  & .leeloo-lgt-form-wrapper {
+    @apply block;
+  }
+
+  & .leeloo-lgt-form {
+    width: 100% !important;
+  }
+}
+
+.loading-bar {
+  @apply h-4 w-full animate-loading rounded-full bg-accent;
+}

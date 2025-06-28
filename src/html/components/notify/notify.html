@@ -1,0 +1,34 @@
+<div class="backdrop-notify notify-hidden smOnly:px-5" data-backdrop-notify>
+  <div class="notify bg-white text-black" data-notify>
+    <button
+      class="notify-close-btn absolute right-3 top-3 z-[50] hidden h-8 w-8 place-items-center rounded-full bg-[#ffffff4d] fill-black duration-300 hover:bg-white focus:bg-white md:right-4 md:top-4"
+      type="button"
+      data-notify-close
+      aria-label="{{form.btnCloseAria}}">
+      {% include 'components/notify/close-icon.html' %}
+    </button>
+
+    <div class="relative min-h-[120px]">
+      <!-- success block -->
+      <div class="notify-success left-0 top-0 w-full opacity-0">
+        <!-- if you want to use "useCustomBlock" -->
+        <div class="notify-success-custom hidden">SMTH HERE</div>
+        <!-- if you're using default notify -->
+        {% include 'components/notify/success-icon.html' %}
+      </div>
+
+      <!-- This is error block, do not delete it! -->
+      <div
+        class="notify-failure absolute left-[50%] top-[50%] w-full translate-x-[-50%] translate-y-[-50%] opacity-0">
+        {% include 'components/notify/failure-icon.html' %}
+      </div>
+    </div>
+    <!-- this is "textBlock" -->
+    <div class="hidden" data-notify-content>
+      <p
+        class="text-center text-[36px] font-bold leading-[1.2] xl:text-[40px]"></p>
+      <p
+        class="mt-4 text-center text-[20px] font-medium leading-[1.2] xl:text-[24px]"></p>
+    </div>
+  </div>
+</div>

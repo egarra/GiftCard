@@ -1,0 +1,91 @@
+{% set component = components.notify %}
+
+<div class="backdrop-notify notify-hidden smOnly:px-5" data-backdrop-notify>
+  <div class="notify border border-[#ffffff4d] bg-black text-white" data-notify>
+    <button
+      class="notify-close-btn absolute right-3 top-3 z-[50] hidden h-8 w-8 place-items-center rounded-full bg-[#ffffff4d] fill-black duration-300 hover:bg-white focus:bg-white md:right-4 md:top-4"
+      type="button"
+      data-notify-close
+      aria-label="{{form.btnCloseAria}}">
+      {% include 'components/notify/close-icon.html' %}
+    </button>
+
+    <div class="relative min-h-[120px]">
+      <!-- success block -->
+      <div class="notify-success left-0 top-0 h-auto w-full">
+        <!-- if you want to use "useCustomBlock" -->
+        <div class="notify-success-custom h-full">
+          <div class="md:flex md:justify-between">
+            <div
+              class="md:w-[357px] md:shrink-0 xl:w-[602px] smOnly:text-center">
+              <p
+                class="font-unbounded mx-auto text-[20px]/[24px] md:text-[32px]/[38px] xl:text-[44px]/[52px] smOnly:max-w-[220px]">
+                {{component.title}}
+              </p>
+
+              <p
+                class="font-unbounded mt-[25px] text-[16px]/[24px] md:mt-[10px] xl:mt-[24px] xl:max-w-[538px] xl:text-[21px]/[32px]">
+                {{component.text}}
+              </p>
+
+              <picture>
+                <source
+                  type="image/svg+xml"
+                  media="(min-width: 1280px)"
+                  srcset="./assets/images/img-xl.svg" />
+                <source
+                  type="image/svg+xml"
+                  media="(min-width: 768px)"
+                  srcset="./assets/images/img-md.svg" />
+                <img
+                  class="mt-10 md:mt-[10px] xl:mt-[52px]"
+                  src="./assets/images/img-sm.svg"
+                  title=""
+                  alt=""
+                  width="602"
+                  height="100"
+                  loading="lazy" />
+              </picture>
+            </div>
+
+            <div
+              class="md:flex md:h-[348px] md:w-[250px] md:flex-col md:justify-center md:rounded-[20px] md:bg-white md:py-10 md:text-black xl:h-[402px] xl:w-[420px] xl:px-[32px] xl:py-[52px] smOnly:mt-[62px]">
+              <div
+                class="text-block flex flex-col items-center gap-[13px] md:gap-[17px] xl:mb-[26px] xl:gap-[32px]">
+                <p
+                  class="font-unbounded text-center text-[10px]/[15px] font-medium md:mx-auto md:max-w-[220px] md:text-[12px]/[15px] xl:max-w-[338px] xl:text-[18px]/[23px]">
+                  {{component.leelooText}}
+                </p>
+
+                <img
+                  class=""
+                  src="./assets/images/arrow.svg"
+                  title=""
+                  alt=""
+                  width="32"
+                  height="32"
+                  loading="lazy" />
+              </div>
+
+              <div
+                class="notify-leeloo-block flex flex-col justify-end smOnly:mx-[-20px] smOnly:mb-[-48px] smOnly:mt-[24px] smOnly:min-h-[191px] smOnly:rounded-[20px] smOnly:bg-white"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- This is error block, do not delete it! -->
+      <div
+        class="notify-failure absolute left-[50%] top-[50%] w-full translate-x-[-50%] translate-y-[-50%] opacity-0">
+        {% include 'components/notify/failure-icon.html' %}
+      </div>
+    </div>
+    <!-- this is "textBlock" -->
+    <div class="hidden" data-notify-content>
+      <p
+        class="text-center text-[36px] font-bold leading-[1.2] xl:text-[40px]"></p>
+      <p
+        class="mt-4 text-center text-[20px] font-medium leading-[1.2] xl:text-[24px]"></p>
+    </div>
+  </div>
+</div>

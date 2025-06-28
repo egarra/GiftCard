@@ -1,0 +1,35 @@
+{% set s = reviews %}
+
+<section class="{{s.id}} section">
+  <div class="container">
+    <!-- title -->
+    <h2 class="section-title">{{s.title}}</h2>
+
+    <!-- swiper container -->
+    <div class="reviews-swiper">
+      <!-- swiper list -->
+      <ul class="swiper-wrapper">
+        {% for item in s.list %}
+        <!-- swiper item {{loop.index}} -->
+        <li class="swiper-slide">{{item}}</li>
+        {% endfor %}
+      </ul>
+
+      <!-- swiper buttons -->
+      <div class="swiper-buttons">
+        <button
+          class="reviews-button-prev rotate-180"
+          type="button"
+          aria-label="до попереднього слайду">
+          {% include 'components/swiper-btn.html' %}
+        </button>
+        <button
+          class="reviews-button-next"
+          type="button"
+          aria-label="до наступного слайду">
+          {% include 'components/swiper-btn.html' %}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

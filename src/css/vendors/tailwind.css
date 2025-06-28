@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply min-w-0 scroll-smooth;
+  }
+
+  body {
+    @apply bg-body font-montserrat text-[16px]/[24px] font-normal text-black;
+  }
+}
+
+@layer utilities {
+  .section {
+    @apply py-[30px] md:py-[64px] xl:py-[80px];
+  }
+
+  .section-title {
+    @apply mb-8 text-[32px]/[36px] font-bold xl:mb-[64px] xl:text-[48px]/[1];
+  }
+
+  .btn {
+    @apply flex min-h-[64px] w-full items-center justify-center rounded-full bg-black p-5 text-center font-montserrat text-[16px]/[24px] font-bold text-[#F2F1EE] duration-300 hover:bg-[#2B2B2B] focus:bg-[#2B2B2B] active:bg-[#4F4F4F];
+  }
+
+  .form-btn {
+    @apply mt-8 flex min-h-[64px] w-full items-center justify-center rounded-full bg-black p-5 text-center font-montserrat text-[16px]/[24px] font-bold text-[#F2F1EE] duration-300 hover:bg-[#2B2B2B] focus:bg-[#2B2B2B] active:bg-[#4F4F4F];
+  }
+
+  .scroll-hidden {
+    @apply overflow-hidden;
+  }
+}

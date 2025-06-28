@@ -1,0 +1,61 @@
+/* wrapper for label and input */
+.input-wrap {
+  @apply relative w-full;
+}
+
+/* label */
+.input-label {
+  @apply mb-1 block text-[14px]/[18px] font-normal md:mb-2 md:text-[16px]/[24px];
+}
+
+/* input */
+.input-field {
+  @apply h-[48px] w-full rounded-[8px] border-2 border-gray bg-white px-4 py-3 text-[16px]/[24px] font-normal;
+
+  &::placeholder {
+    @apply text-black;
+  }
+
+  &:focus {
+    @apply border-black outline-none;
+
+    &::placeholder {
+      @apply opacity-30 duration-300;
+    }
+  }
+
+  &.validate-error-field {
+    @apply border-2 border-error bg-[url('../images/form/error.svg')] bg-auto bg-[center_right_16px] bg-no-repeat;
+  }
+
+  &.validate-success-field {
+    @apply border-2 border-[#58C87C];
+  }
+}
+
+/* checkbox label */
+.input-label-checkbox {
+  @apply flex cursor-pointer items-start justify-start gap-4 px-4 font-montserrat text-[14px]/[18px] font-normal text-black md:items-center;
+
+  & > .validate-error-field + .checkbox {
+    @apply border-error;
+  }
+}
+
+/* checkbox custom */
+.checkbox {
+  @apply inline-block h-6 w-6 shrink-0 rounded-[8px] border-2 border-gray bg-white bg-contain bg-center bg-no-repeat;
+
+  [type="checkbox"]:checked + & {
+    @apply border-black bg-[url('../images/form/checkbox.svg')] duration-300;
+  }
+
+  [type="checkbox"]:focus-visible + & {
+    @apply outline outline-[#e59700];
+  }
+}
+
+/* error validation message */
+.validate-error-label {
+  @apply absolute bottom-[-15px] left-4 text-[10px]/[1.5] font-medium;
+}

@@ -1,0 +1,13 @@
+.faq__question {
+  &[aria-expanded="true"] .faq__answer {
+    @apply mt-4;
+
+    @screen xl {
+      @apply mt-8;
+    }
+  }
+
+  &[aria-expanded="true"] .faq__icon {
+    @apply rotate-45 fill-[#E0DACD] active:fill-[#FF8856];
+  }
+}

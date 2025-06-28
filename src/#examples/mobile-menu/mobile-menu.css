@@ -1,0 +1,68 @@
+@screen notXl {
+  .nav {
+    @apply hidden;
+  }
+
+  .burger {
+    @apply relative z-50 flex h-[32px] w-[60px] rotate-0 cursor-pointer flex-col items-center justify-center gap-1 rounded-full border border-black duration-300 hover:bg-[#EBE7DD] focus:bg-[#EBE7DD];
+
+    &.is-active {
+      @apply bg-[#EBE7DD];
+    }
+
+    & .burger-bar {
+      @apply absolute h-px w-[24px] shrink-0 rotate-0 rounded-[8px] border border-black opacity-100 duration-300;
+
+      &:nth-child(1) {
+        @apply top-[8px];
+      }
+
+      &:nth-child(2) {
+        @apply top-[14px];
+      }
+
+      &:nth-child(3) {
+        @apply top-[20px];
+      }
+
+      &:not(:last-child) {
+        @apply inline-block;
+      }
+    }
+  }
+
+  .is-active .burger-bar {
+    @apply w-[24px];
+
+    &:nth-child(1) {
+      @apply top-[14px] rotate-[135deg];
+    }
+
+    &:nth-child(2) {
+      @apply translate-x-[-100%] opacity-0;
+    }
+
+    &:nth-child(3) {
+      @apply top-[14px] rotate-[-135deg];
+    }
+  }
+
+  .mobile-menu {
+    @apply pointer-events-none fixed left-0 top-0 z-50 grid h-[100vh] w-[100vw] translate-x-[100%] items-center justify-center bg-body duration-300 md:duration-500;
+
+    &.is-open {
+      @apply pointer-events-auto translate-x-0;
+    }
+
+    & .nav {
+      @apply mt-16 block;
+    }
+  }
+}
+
+@screen xl {
+  .burger,
+  .mobile-menu {
+    @apply hidden;
+  }
+}

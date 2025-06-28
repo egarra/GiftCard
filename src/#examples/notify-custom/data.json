@@ -1,0 +1,9 @@
+{
+  "components": {
+    "notify": {
+      "title": "ЗАЛИШИВСЯ ЩЕ ОДИН КРОК",
+      "text": "<span class=\"text-accent\">Переходьте в Telegram, щоб завершити реєстрацію на Software Engineering Meetup</span> та дізнатися як отримати грант на ІТ-магістратуру",
+      "leelooText": "Тисніть кнопку, щоб завершити реєстрацію"
+    }
+  }
+}

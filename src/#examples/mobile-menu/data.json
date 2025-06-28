@@ -1,0 +1,25 @@
+{
+  "components": {
+    "mobileMenu": {
+      "btnAria": "кнопка мобільного меню",
+      "navMenuBtn": {
+        "title": "Зареєструватися",
+        "href": "#register"
+      },
+      "navLinks": [
+        {
+          "title": "Програма",
+          "link": "#tabs"
+        },
+        {
+          "title": "Відгуки",
+          "link": "#reviews"
+        }
+      ],
+      "mobileMenuBtn": {
+        "title": "Забронювати знижку",
+        "href": "#register"
+      }
+    }
+  }
+}

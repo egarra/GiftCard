@@ -1,0 +1,21 @@
+{% set component = components.timer %}
+
+<div class="text-black" data-timer="{{component.value}}" role="timer">
+  <h2>{{component.title}}</h2>
+
+  <ol class="font-robochyi mt-2 flex list-none justify-center">
+    {% for item in component.items %}
+    <li
+      class="flex h-[51px] w-[80px] shrink-0 flex-col items-center justify-center rounded-[16px] bg-white md:w-[61px]">
+      <span class="w-[32px] text-center text-[24px]" {{item.attribute}}>
+        00
+      </span>
+      <span class="text-center text-[12px]/[12px]">{{item.text}}</span>
+    </li>
+    {% if not loop.last %}
+    <li class="hidden">:</li>
+    {% endif %}
+    <!--  -->
+    {% endfor %}
+  </ol>
+</div>

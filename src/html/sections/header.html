@@ -1,0 +1,106 @@
+{% set s = header %}
+<header class="header h-screen">
+  <img
+    class="absolute left-0 top-0 h-screen w-full object-cover opacity-70 blur-sm"
+    src="./assets/images/bg.webp"
+    alt=""
+    loading="lazy" />
+
+  <div
+    class="container flex h-full items-center justify-center xxl:!max-w-[1600px]">
+    <div class="scene">
+      <div class="trigger-wrapper">
+        <button class="trigger" id="trigger">
+          <img
+            class="absolute left-0 top-0 h-full w-full rounded-full object-cover"
+            src="./assets/images/button.webp"
+            alt=""
+            loading="lazy" />
+        </button>
+      </div>
+
+      <div class="card" id="card">
+        <!-- LEFT PANEL -->
+        <div class="panel card-left">
+          <div class="card-left-frontside">
+            <img
+              class="absolute left-0 top-0 h-full w-full object-fill"
+              src="./assets/images/door-left.webp"
+              alt=""
+              loading="lazy" />
+          </div>
+          <ul
+            class="card-left-backside grid h-full w-full grid-rows-3 gap-[24px] p-[2rem]">
+            {% for leftItem in s.leftSideInfo %}
+            <li
+              class="card-left-backside-item relative rounded-[24px] bg-slate-500">
+              <div
+                class="absolute bottom-0 h-[200px] w-full overflow-hidden xxl:h-[260px]">
+                <img
+                  class="card-left-img character-entry absolute bottom-[-60px] left-0 mx-auto h-[200px] w-auto rounded-full xxl:h-[260px]"
+                  src="./assets/images/{{leftItem.img}}.webp"
+                  alt=""
+                  loading="lazy" />
+              </div>
+
+              <p
+                class="speech-bubble absolute left-[16px] top-[100px] min-w-[200px] rounded-[50px] bg-white p-[16px] text-[10px]/[12px] font-semibold text-black xxl:top-[40px] xxl:p-[24px]">
+                {{leftItem.text}}
+              </p>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- CENTER PANEL -->
+        <div class="panel center overflow-hidden">
+          <div class="glow-effect"></div>
+
+          <div class="central-image-wrapper">
+            <img
+              class="central-image h-auto w-full object-cover"
+              src="./assets/images/main-img-1.webp"
+              title=""
+              alt=""
+              loading="lazy" />
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="panel card-right">
+          <div class="card-right-frontside">
+            <img
+              class="absolute left-0 top-0 h-full w-full object-fill"
+              src="./assets/images/door-right.webp"
+              alt=""
+              loading="lazy" />
+          </div>
+
+          <ul
+            class="card-right-backside grid h-full w-full grid-rows-3 gap-[24px] p-[2rem]">
+            {% for rightItem in s.rightSideInfo %}
+            <li
+              class="card-right-backside-item relative rounded-[24px] bg-slate-500">
+              <div
+                class="absolute bottom-0 h-[200px] w-full overflow-hidden xxl:h-[260px]">
+                <img
+                  class="card-right-img character-entry absolute bottom-[-60px] left-0 mx-auto h-[200px] w-auto rounded-full xxl:h-[260px]"
+                  src="./assets/images/{{rightItem.img}}.webp"
+                  alt=""
+                  loading="lazy" />
+              </div>
+
+              <p
+                class="speech-bubble absolute left-[120px] top-[10px] min-w-[200px] rounded-[50px] bg-white p-[16px] text-[10px]/[12px] font-semibold text-black xxl:top-[40px] xxl:p-[24px]">
+                {{rightItem.text}}
+              </p>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ytPlayer"></div>
+</header>

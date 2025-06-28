@@ -1,0 +1,42 @@
+{% set s = faq %}
+
+<section class="{{s.id}} section">
+  <div class="container">
+    <!-- title -->
+    <h2 class="section-title mb-16 uppercase">{{s.id}}</h2>
+
+    <!-- list -->
+    <ul class="flex flex-col items-center justify-center gap-4">
+      {% for item in s.list %}
+      <li
+        class="faq__question flex w-full cursor-pointer flex-col items-start justify-center overflow-hidden rounded-[32px] bg-white/30 p-4 duration-300 hover:bg-white focus:bg-white xl:p-8"
+        aria-expanded="false">
+        <!-- question block -->
+        <div class="flex w-full items-center justify-between gap-4 xl:gap-8">
+          <h3
+            class="font-robochyi text-[20px] font-bold leading-[32px] md:text-[24px]">
+            {{item.question}}
+          </h3>
+          <svg
+            class="faq__icon size-8 shrink-0 fill-[#FBCBB9] duration-300 active:fill-[#FF8856]"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32ZM15.9999 26.6663C17.4025 26.6663 18.5396 25.5293 18.5396 24.1267V18.5394H24.127C25.5296 18.5394 26.6667 17.4023 26.6667 15.9997C26.6667 14.597 25.5296 13.46 24.127 13.46H18.5396V7.87269C18.5396 6.47006 17.4025 5.33301 15.9999 5.33301C14.5973 5.33301 13.4602 6.47006 13.4602 7.87269V13.46H7.87302C6.47039 13.46 5.33333 14.597 5.33333 15.9997C5.33333 17.4023 6.47039 18.5394 7.87302 18.5394H13.4602V24.1267C13.4602 25.5293 14.5973 26.6663 15.9999 26.6663Z" />
+          </svg>
+        </div>
+
+        <!-- answer block -->
+        <h4
+          class="faq__answer max-h-0 w-full cursor-auto overflow-hidden font-montserrat text-[16px] font-normal leading-[24px] duration-300">
+          {{item.answer}}
+        </h4>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

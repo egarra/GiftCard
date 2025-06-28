@@ -1,0 +1,15 @@
+{
+  "faq": {
+    "id": "faq",
+    "list": [
+      {
+        "question": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        "answer": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus quae alias doloremque aliquid dolorem rem, dolore quo fuga soluta est?"
+      },
+      {
+        "question": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        "answer": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus quae alias doloremque aliquid dolorem rem, dolore quo fuga soluta est?"
+      }
+    ]
+  }
+}

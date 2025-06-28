@@ -1,0 +1,23 @@
+.reviews-swiper {
+  @apply h-full w-full overflow-hidden;
+
+  & .swiper-wrapper {
+    @apply box-content flex transition-transform;
+  }
+
+  & .swiper-slide {
+    @apply h-full w-full shrink-0;
+  }
+}
+
+.swiper-buttons:has(.swiper-button-lock) {
+  @apply hidden;
+}
+
+.swiper-btn {
+  @apply fill-[#FBCBB9] duration-300 hover:fill-[#FFAB87] focus:fill-[#FFAB87] active:fill-[#FF8856];
+
+  .swiper-button-disabled & {
+    @apply fill-[#E0DACD];
+  }
+}

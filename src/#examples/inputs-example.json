@@ -1,0 +1,20 @@
+{
+  "inputs": [
+    {
+      "title": "Додатковий номер або нік в Телеграм, щоб ми точно вас знайшли",
+      "placeholder": null,
+      "name": "telegram",
+      "type": "text",
+      "dataField": "text",
+      "required": false
+    },
+    {
+      "title": "Що б ви хотіли дізнатися на консультації/зручний час для контакту?",
+      "placeholder": null,
+      "name": "notes",
+      "type": "text",
+      "dataField": "text",
+      "required": false
+    }
+  ]
+}

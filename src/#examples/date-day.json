@@ -1,0 +1,7 @@
+{
+  "components": {
+    "dateDay": "<?= $START_DATE_DAY ?>",
+    "dateMonth": "<?= $START_DATE_MONTH ?>",
+    "dateTime": "<?= $START_TIME ?>"
+  }
+}

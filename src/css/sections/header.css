@@ -1,0 +1,433 @@
+.header {
+  .scene {
+    width: min(90vw, 1000px);
+    height: calc(min(90vw, 800px) * 0.675);
+    perspective: 2000px;
+    position: relative;
+
+    @screen xxl {
+      width: min(90vw, 1200px);
+      height: calc(min(90vw, 1000px) * 0.675);
+    }
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) rotateX(4deg);
+    transition: transform 0.5s ease;
+    /* box-shadow: 100px 20px 100px rgba(0, 0, 0, 0.35); */
+    border-radius: 24px;
+    overflow: visible;
+  }
+
+  .panel {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+      transform 3s ease,
+      box-shadow 0.6s ease;
+    transform-style: preserve-3d;
+    background: linear-gradient(to right, rgba(22, 20, 15, 1));
+  }
+
+  .center {
+    width: 50%;
+    left: 25%;
+    z-index: 1 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    background-image: url("../images/bg-card.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .card-left,
+  .card-right {
+    width: 25%;
+    z-index: 2 !important;
+  }
+
+  .card-left {
+    left: 1px;
+    transform-origin: right center;
+    transform: rotateY(175deg);
+    border-bottom-left-radius: 24px;
+    border-top-left-radius: 24px;
+  }
+
+  .card-right {
+    right: 1px;
+    transform-origin: left center;
+    transform: rotateY(-175deg);
+    border-bottom-right-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .card-left-frontside,
+  .card-right-frontside {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+
+  .card-left-backside-item {
+    .speech-bubble::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -13px;
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-right-color: white;
+      transform: rotate(45deg);
+    }
+  }
+
+  .card-left-backside-item:nth-child(1) {
+    .card-left-img {
+      @apply bottom-[-80px] right-[-35px];
+    }
+
+    .speech-bubble {
+      @apply left-auto right-[120px] top-[30px];
+
+      &::before {
+        left: auto;
+        right: 5px;
+      }
+
+      @screen xxl {
+        @apply right-[170px] top-[60px];
+      }
+    }
+  }
+
+  .card-left-backside-item:nth-child(2) {
+    .card-left-img {
+      @apply right-[-35px];
+    }
+
+    .speech-bubble {
+      @apply left-auto right-[120px] top-[15px];
+
+      &::before {
+        left: auto;
+        right: 5px;
+      }
+
+      @screen xxl {
+        @apply right-[170px] top-[40px];
+      }
+    }
+  }
+
+  .card-left-backside-item:nth-child(3) {
+    .speech-bubble {
+      &::before {
+        left: 18px;
+        top: -23px;
+        transform: rotate(66deg);
+      }
+
+      @screen xxl {
+        top: 120px;
+
+        &::before {
+          left: 25px;
+          top: -22px;
+        }
+      }
+    }
+  }
+
+  .card-right-backside-item {
+    .speech-bubble::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -13px;
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-right-color: white;
+      transform: rotate(45deg);
+    }
+  }
+
+  .card-right-backside-item:nth-child(1) {
+    .card-right-img {
+      @apply right-[-35px];
+    }
+
+    .speech-bubble {
+      @apply left-[120px] top-[30px];
+
+      &::before {
+        right: auto;
+        left: 5px;
+        top: -13px;
+      }
+
+      @screen xxl {
+        @apply left-[170px] top-[35px];
+      }
+    }
+  }
+
+  .card-right-backside-item:nth-child(2) {
+    .card-right-img {
+      @apply right-[-35px];
+    }
+
+    .speech-bubble {
+      @apply left-[120px] top-[15px];
+
+      @screen xxl {
+        @apply left-[170px] top-[40px];
+      }
+    }
+  }
+
+  .card-right-backside-item:nth-child(3) {
+    .speech-bubble {
+      &::before {
+        transform: rotate(43deg);
+        left: -15px;
+        top: 13px;
+      }
+
+      @screen xxl {
+        top: 120px;
+
+        &::before {
+          transform: rotate(43deg);
+          left: -15px;
+          top: 13px;
+        }
+      }
+    }
+  }
+
+  .card.open .card-left {
+    transform: rotateY(20deg);
+    z-index: 0;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .card.open .card-right {
+    transform: rotateY(-20deg);
+    z-index: 0;
+    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .card.open {
+    transform: rotateX(4deg) translateY(-6px);
+  }
+
+  .trigger-wrapper {
+    position: absolute;
+    z-index: 10;
+    width: clamp(60px, 12vw, 120px);
+    height: clamp(60px, 12vw, 120px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .trigger {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow:
+      0 0 10px rgba(0, 255, 255, 0.3),
+      0 0 20px rgba(0, 255, 255, 0.2),
+      inset 0 0 10px rgba(0, 255, 255, 0.1);
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.2s ease;
+    overflow: hidden;
+  }
+
+  .trigger:hover {
+    box-shadow:
+      0 0 15px rgba(0, 255, 255, 0.5),
+      0 0 30px rgba(0, 255, 255, 0.4),
+      inset 0 0 15px rgba(0, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  .trigger:active {
+    transform: scale(0.9);
+  }
+
+  .trigger-rotate {
+    animation: rotate 3s ease-out forwards;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    90% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(360deg) scale(0);
+    }
+  }
+
+  .glow-effect {
+    position: absolute;
+    width: 50vmin;
+    height: 50vmin;
+    margin: auto;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 0, 0.4),
+      transparent
+    );
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 20;
+  }
+
+  .card.open .glow-effect {
+    animation: burstGlow 2s ease-out forwards;
+  }
+
+  @keyframes burstGlow {
+    0% {
+      opacity: 0;
+      transform: scale(0.6);
+      filter: blur(30px) brightness(1.5);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(40px) brightness(4);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+      filter: blur(60px) brightness(8);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+      filter: blur(80px) brightness(1);
+    }
+  }
+
+  #ytPlayer {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: -9999px;
+    left: -9999px;
+    pointer-events: none;
+  }
+
+  .central-image-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .central-image-wrapper::before,
+  .central-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .central-image-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(22, 20, 15, 1), transparent);
+  }
+
+  .central-image-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(22, 20, 15, 1), transparent);
+  }
+
+  .central-image {
+    box-shadow:
+      inset 50px 0 50px -20px rgba(0, 0, 0, 0.7),
+      inset -50px 0 50px -20px rgba(0, 0, 0, 0.7);
+  }
+
+  .character-entry {
+    transform: scale(0.6);
+    animation: walk-in-place 2s ease-out forwards;
+  }
+
+  .character-entry:not(.animate) {
+    animation: none !important;
+  }
+
+  @keyframes walk-in-place {
+    0% {
+      transform: scale(0.6) translateY(0px);
+    }
+    10% {
+      transform: scale(0.65) translateY(-4px);
+    }
+    20% {
+      transform: scale(0.7) translateY(4px);
+    }
+    30% {
+      transform: scale(0.75) translateY(-4px);
+    }
+    40% {
+      transform: scale(0.8) translateY(4px);
+    }
+    50% {
+      transform: scale(0.85) translateY(-3px);
+    }
+    60% {
+      transform: scale(0.9) translateY(3px);
+    }
+    70% {
+      transform: scale(0.95) translateY(-2px);
+    }
+    80% {
+      transform: scale(0.98) translateY(2px);
+    }
+    90% {
+      transform: scale(1) translateY(-1px);
+    }
+    100% {
+      transform: scale(1) translateY(0px);
+    }
+  }
+
+  .speech-bubble {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .speech-bubble.dialog-show {
+    opacity: 1;
+  }
+}

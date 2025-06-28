@@ -1,0 +1,83 @@
+.backdrop-notify {
+  @apply visible fixed inset-0 z-[100] flex overflow-auto bg-black/55 opacity-100 duration-300;
+
+  &.notify-hidden {
+    @apply pointer-events-none invisible opacity-0;
+  }
+
+  &[data="failure"] {
+    .notify-failure {
+      @apply opacity-100;
+    }
+
+    .notify-svg-failure {
+      @apply scale-100;
+    }
+
+    .notify-success {
+      @apply absolute opacity-0;
+    }
+  }
+
+  &[data="success"] {
+    .notify-success {
+      @apply relative z-[5] opacity-100;
+    }
+
+    .notify-svg-success {
+      @apply scale-100;
+    }
+
+    .notify-failure {
+      @apply opacity-0;
+    }
+  }
+}
+
+.notify {
+  @apply m-auto flex w-full translate-x-0 translate-y-0 flex-col gap-4 rounded-[24px] px-5 py-12 opacity-100 duration-300 md:w-[704px] md:px-[32px] md:py-[60px] xl:w-[1216px] xl:rounded-[32px] xl:p-[64px];
+  background-image: linear-gradient(
+    341deg,
+    #5a05f4 6.29%,
+    rgba(90, 5, 244, 0) 67.25%
+  );
+  background-repeat: no-repeat;
+
+  .notify-hidden & {
+    @apply opacity-0 duration-300;
+  }
+
+  .notify-svg-success {
+    svg {
+      @apply h-auto w-full;
+    }
+  }
+
+  .notify-svg-failure {
+    svg {
+      @apply h-[60px] w-auto;
+
+      .notify-svg {
+        @apply stroke-red-600;
+      }
+    }
+  }
+
+  .notify-svg {
+    @apply stroke-accent;
+  }
+
+  &[data-custom="true"] {
+    .notify-close-btn {
+      @apply grid;
+    }
+
+    .notify-success-custom {
+      @apply block;
+    }
+
+    .notify-svg-success {
+      @apply hidden;
+    }
+  }
+}

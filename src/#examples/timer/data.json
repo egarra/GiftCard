@@ -1,0 +1,30 @@
+{
+  "components": {
+    "timer": {
+      "value": "<?= $START_DATE_UTC ?>",
+      "title": "До старту залишилось",
+      "items": [
+        {
+          "attribute": "data-day",
+          "text": "днів"
+        },
+        {
+          "attribute": "data-hour",
+          "text": "год"
+        },
+        {
+          "attribute": "data-min",
+          "text": "хв"
+        },
+        {
+          "attribute": "data-sec",
+          "text": "сек"
+        },
+        {
+          "attribute": "data-ms",
+          "text": "мсек"
+        }
+      ]
+    }
+  }
+}

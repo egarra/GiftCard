@@ -1,0 +1,41 @@
+{% set component = components.mobileMenu %}
+
+<div class="relative z-[100] flex items-center justify-between">
+  <!-- LOGO -->
+  {% include 'components/logo.html' %}
+
+  <div class="flex items-center justify-center gap-4 xl:gap-8">
+    <!-- NAV-MENU (desktop visible) -->
+    {% include 'components/nav-menu.html' %}
+    <a
+      class="flex h-[32px] w-fit items-center justify-center rounded-full border bg-[#F2F1EE] px-4 font-bold duration-300 hover:bg-[#EBE7DD] focus:bg-[#EBE7DD] active:bg-black active:text-white notXl:hidden"
+      href="{{component.navMenuBtn.href}}"
+      title="{{component.navMenuBtn.title}}">
+      {{component.navMenuBtn.title}}
+    </a>
+
+    <!-- MOBILE-MENU BUTTON (notDesktop visible) -->
+    <button
+      class="burger"
+      type="button"
+      aria-label="{{component.btnAria}}"
+      aria-expanded="false"
+      data-open-mobile-menu-btn>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+  </div>
+</div>
+
+<!-- MOBILE-MENU CONTENT -->
+<div class="mobile-menu" data-mobile-menu>
+  {% include 'components/nav-menu.html' %}
+  <a
+    class="btn w-[276px]"
+    href="{{component.mobileMenuBtn.href}}"
+    title="{{component.mobileMenuBtn.title}}"
+    data-nav-link
+    >{{component.mobileMenuBtn.title}}</a
+  >
+</div>

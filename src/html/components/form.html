@@ -1,0 +1,8 @@
+<form class="w-full" id="{{formId}}" autocomplete="on">
+  <div class="flex flex-col items-center justify-center gap-5">
+    {% block formFields %}{% endblock %}
+  </div>
+  <button class="form-btn disabled:bg-gray disabled:text-white" type="submit">
+    {{ form.btnSubmit }}
+  </button>
+</form>

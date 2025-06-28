@@ -1,0 +1,33 @@
+{% set s = reviews %}
+
+<section class="{{s.id}} section">
+  <div class="container">
+    <!-- title -->
+    <h2 class="section-title">{{s.title}}</h2>
+
+    <!-- slider list -->
+    <!-- НЕ використовуйте ul, бо slick-slider вкладає свої div всередину, що руйнує семантику ul -->
+    <div class="reviews-slider">
+      {% for item in s.list %}
+      <!-- slider item -->
+      <div class=""></div>
+      {% endfor %}
+    </div>
+
+    <!-- slider buttons -->
+    <div class="">
+      <button
+        class="reviews-prev-btn rotate-180"
+        type="button"
+        aria-label="до попереднього слайду">
+        {% include 'components/slider-btn.njk' %}
+      </button>
+      <button
+        class="reviews-next-btn"
+        type="button"
+        aria-label="до наступного слайду">
+        {% include 'components/slider-btn.njk' %}
+      </button>
+    </div>
+  </div>
+</section>

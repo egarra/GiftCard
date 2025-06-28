@@ -1,0 +1,44 @@
+[
+  {
+    "key": "loadingMessage",
+    "dict": {
+      "uk": "Зачекайте декілька секунд… майже отримали Вашу заявку",
+      "tr": "Lütfen birkaç saniye bekleyin... neredeyse isteğinizi aldım"
+    }
+  },
+  {
+    "key": "thanks",
+    "dict": {
+      "uk": "Дякуємо!",
+      "tr": "Teşekkür ederim!"
+    }
+  },
+  {
+    "key": "reply",
+    "dict": {
+      "uk": "Ми зв’яжемось із вами найближчим часом",
+      "tr": "Size en kısa sürede cevap vereceğiz."
+    }
+  },
+  {
+    "key": "error",
+    "dict": {
+      "uk": "Помилка!",
+      "tr": "Hata!"
+    }
+  },
+  {
+    "key": "tryAgain",
+    "dict": {
+      "uk": "Спробуйте пізніше.",
+      "tr": "Lütfen daha sonra tekrar deneyiniz."
+    }
+  },
+  {
+    "key": "emailNotExists",
+    "dict": {
+      "uk": "Email не існує",
+      "tr": "E-posta mevcut değil"
+    }
+  }
+]

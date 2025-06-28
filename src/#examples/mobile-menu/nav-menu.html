@@ -1,0 +1,14 @@
+{% set component = components.mobileMenu %}
+
+<nav class="nav">
+  <ul class="flex flex-col items-center justify-center gap-4 xl:flex-row">
+    {% for link in component.navLinks %}
+    <li
+      class="w-max cursor-pointer rounded-full border border-transparent bg-[#F2F1EE] px-4 py-1 text-[20px]/[24px] duration-300 hover:border-black hover:bg-[#EBE7DD] focus:border-black focus:bg-[#EBE7DD] active:bg-black active:text-white xl:text-[16px]/[24px]">
+      <a href="{{ link.link }}" title="{{ link.title }}" data-nav-link>
+        {{ link.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

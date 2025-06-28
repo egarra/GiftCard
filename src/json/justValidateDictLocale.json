@@ -1,0 +1,79 @@
+[
+  {
+    "key": "Name is required",
+    "dict": {
+      "uk": "Ім’я обов’язкове",
+      "tr": "İsim gerekli"
+    }
+  },
+  {
+    "key": "Name is invalid",
+    "dict": {
+      "uk": "Ім’я невірне",
+      "tr": "Ad geçersiz"
+    }
+  },
+  {
+    "key": "Email is required",
+    "dict": {
+      "uk": "Email обов’язковий",
+      "tr": "Email gereklidir"
+    }
+  },
+  {
+    "key": "Email is invalid!",
+    "dict": {
+      "uk": "Email невірний!",
+      "tr": "E-posta geçersiz!"
+    }
+  },
+  {
+    "key": "Phone number is required",
+    "dict": {
+      "uk": "Номер телефону обов’язковий",
+      "tr": "Telefon numarası gerekli"
+    }
+  },
+  {
+    "key": "Phone number is invalid!",
+    "dict": {
+      "uk": "Номер телефону невірний!",
+      "tr": "Telefon numarası geçersiz!"
+    }
+  },
+  {
+    "key": "The field is required",
+    "dict": {
+      "uk": "Обов’язкове поле",
+      "tr": "Alan zorunludur"
+    }
+  },
+  {
+    "key": "The field must contain a minimum of 2 characters",
+    "dict": {
+      "uk": "Поле повинно містити мінімум 2 символи",
+      "tr": "Alan en az 2 karakter içermelidir"
+    }
+  },
+  {
+    "key": "The field must contain a maximum of 30 characters",
+    "dict": {
+      "uk": "Поле повинно містити максимум 30 символів",
+      "tr": "Alan en fazla 30 karakter içermelidir"
+    }
+  },
+  {
+    "key": "The field must contain a minimum of 3 characters",
+    "dict": {
+      "uk": "Поле повинно містити мінімум 3 символи",
+      "tr": "Alan en az 2 karakter içermelidir"
+    }
+  },
+  {
+    "key": "The field must contain a maximum of 100 characters",
+    "dict": {
+      "uk": "Поле повинно містити максимум 100 символів",
+      "tr": "Alan en fazla 100 karakter içermelidir"
+    }
+  }
+]
