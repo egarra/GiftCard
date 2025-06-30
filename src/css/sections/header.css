@@ -199,14 +199,14 @@
     }
 
     .speech-bubble {
-      @apply left-[120px] top-[15px] w-[270px];
+      @apply left-[120px] top-[15px] w-[222px];
 
       &::before {
         left: -12px;
       }
 
       @screen xxl {
-        @apply left-[170px] top-[40px];
+        @apply left-[170px] top-[40px] w-[270px];
       }
     }
   }
