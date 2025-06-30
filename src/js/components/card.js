@@ -61,4 +61,9 @@ function startCharacterSequence() {
 
     delay += 5000; // интервал между персонажами
   });
+
+  const totalDuration = (allCharacters.length - 1) * 5000 + 5000;
+  setTimeout(() => {
+    document.querySelector(".speech-bubble-final").classList.add("dialog-show");
+  }, totalDuration);
 }

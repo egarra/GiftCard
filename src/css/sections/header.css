@@ -1,9 +1,14 @@
 .header {
   .scene {
-    width: min(90vw, 1000px);
-    height: calc(min(90vw, 800px) * 0.675);
+    width: min(90vw, 800px);
+    height: calc(min(90vw, 600px) * 0.675);
     perspective: 2000px;
     position: relative;
+
+    @screen xl {
+      width: min(90vw, 1000px);
+      height: calc(min(90vw, 800px) * 0.675);
+    }
 
     @screen xxl {
       width: min(90vw, 1200px);
@@ -136,17 +141,18 @@
 
   .card-left-backside-item:nth-child(3) {
     .speech-bubble {
+      @apply left-[-65px] w-[270px];
       &::before {
-        left: 18px;
-        top: -23px;
-        transform: rotate(66deg);
+        left: 77px;
+        top: -22px;
+        transform: rotate(90deg);
       }
 
       @screen xxl {
         top: 120px;
 
         &::before {
-          left: 25px;
+          left: 100px;
           top: -22px;
         }
       }
@@ -193,7 +199,11 @@
     }
 
     .speech-bubble {
-      @apply left-[120px] top-[15px];
+      @apply left-[120px] top-[15px] w-[270px];
+
+      &::before {
+        left: -12px;
+      }
 
       @screen xxl {
         @apply left-[170px] top-[40px];
@@ -427,7 +437,16 @@
     transition: opacity 0.3s ease;
   }
 
+  .speech-bubble-final {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
   .speech-bubble.dialog-show {
+    opacity: 1;
+  }
+
+  .speech-bubble-final.dialog-show {
     opacity: 1;
   }
 }

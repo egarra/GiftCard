@@ -60,7 +60,7 @@ const html = () => {
       }),
     )
     .pipe(mode.production(htmlmin(htmlminConfig)))
-    .pipe(mode.production(rename({ extname: ".php" })))
+    .pipe(mode.production(rename({ extname: ".html" })))
     .pipe(gulp.dest(paths.build.html));
 };
 
