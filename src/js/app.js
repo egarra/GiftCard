@@ -13,8 +13,6 @@ window.addEventListener("load", async function () {
   const formsArray = [
     {
       formId: "modalForm",
-      // productName: window.productName,
-      // productId: window.productId,
     },
   ];
 
