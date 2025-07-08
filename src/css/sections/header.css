@@ -1,9 +1,12 @@
 .header {
   .scene {
-    /* width: 100%; */
-    height: 50%;
+    height: calc(min(60%, 450px));
     perspective: 2000px;
     position: relative;
+
+    @screen md {
+      height: calc(min(60%, 750px));
+    }
 
     @screen xl {
       width: min(90vw, 1000px);
@@ -19,8 +22,8 @@
   .card {
     width: 100%;
     height: 100%;
-    position: relative;
     transform-style: preserve-3d;
+    position: relative;
     transform: rotateY(0deg) rotateX(4deg);
     transition: transform 0.5s ease;
     border-radius: 24px;
@@ -42,8 +45,6 @@
   }
 
   .center {
-    /* width: 50%; */
-    /* margin: 0 auto; */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1 !important;
@@ -98,6 +99,10 @@
 
   .speech-bubble {
     @screen smOnly {
+      @apply !bottom-[-40px] !left-0 !h-max !w-full !min-w-full !rounded-none border-2 border-black !p-[2px] !text-[6px]/[8px];
+    }
+
+    @screen mdOnly {
       @apply !bottom-[-40px] !left-0 !h-max !w-full !min-w-full !rounded-none border-2 border-black !p-[2px] !text-[6px]/[8px];
     }
   }
@@ -204,7 +209,7 @@
 
   .card.open .card-right {
     transform: rotateY(-20deg);
-    z-index: 0;
+    z-index: 3;
     box-shadow: 20px 0 40px rgba(0, 0, 0, 0.3);
   }
 
@@ -352,6 +357,11 @@
       inset -50px 0 50px -20px rgba(0, 0, 0, 0.7);
   }
 
+  .character-wrapper {
+    transform-style: flat;
+    perspective: none;
+  }
+
   .character-entry {
     transform: scale(0.6);
     animation: walk-in-place 2s ease-out forwards;
@@ -413,5 +423,16 @@
 
   .speech-bubble-final.dialog-show {
     opacity: 1;
+  }
+
+  .card-left,
+  .card-right,
+  .card-left-frontside,
+  .card-right-frontside,
+  .card-left-backside,
+  .card-right-backside,
+  .card-left-img,
+  .card-right-img {
+    will-change: transform;
   }
 }

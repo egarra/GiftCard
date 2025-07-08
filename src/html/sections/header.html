@@ -5,10 +5,10 @@
     src="./assets/images/bg.webp"
     alt="" />
 
-  <div class="container h-full xxl:!max-w-[1600px]">
+  <div class="container h-full xxl:!max-w-[1600px] smOnly:relative">
     <div
       id="scroll-wrapper"
-      class="h-full items-center justify-center xl:flex smOnly:mx-[-20px] smOnly:overflow-x-auto mdOnly:mx-[-32px] mdOnly:overflow-x-auto">
+      class="h-full items-center justify-center xl:flex smOnly:mx-[-20px] smOnly:mt-[50px] smOnly:overflow-x-auto mdOnly:mx-[-32px] mdOnly:mt-[60px] mdOnly:overflow-x-auto">
       <div
         id="content-wrapper"
         class="scene mx-auto !max-w-none xl:block smOnly:!w-[600px]">
@@ -21,7 +21,7 @@
           </button>
         </div>
 
-        <div class="card" id="card">
+        <div class="card smOnly:mt-[50px] mdOnly:mt-[60px]" id="card">
           <!-- LEFT PANEL -->
           <div class="panel card-left">
             <div class="card-left-frontside">
@@ -96,7 +96,7 @@
             </ul>
           </div>
           <p
-            class="speech-bubble-final absolute bottom-[100px] left-[50%] z-[1] max-w-[370px] translate-x-[-50%] rounded-[24px] bg-white p-4 text-[12px]/[14px] font-medium">
+            class="speech-bubble-final absolute bottom-[100px] left-[50%] z-[1] max-w-[370px] translate-x-[-50%] rounded-[24px] bg-white p-4 text-[8px]/[10px] font-medium xl:text-[12px]/[14px]">
             {{s.text}}
           </p>
         </div>

@@ -1,18 +1,18 @@
 let player;
 
 // Когда API загружено — создаём плеер
-// window.onYouTubeIframeAPIReady = () => {
-//   window.player = new YT.Player("ytPlayer", {
-//     videoId: "C2LWupzMMYE",
-//     playerVars: {
-//       loop: 1,
-//       playlist: "C2LWupzMMYE",
-//       controls: 0,
-//       modestbranding: 1,
-//       disablekb: 1,
-//     },
-//   });
-// };
+window.onYouTubeIframeAPIReady = () => {
+  window.player = new YT.Player("ytPlayer", {
+    videoId: "C2LWupzMMYE",
+    playerVars: {
+      loop: 1,
+      playlist: "C2LWupzMMYE",
+      controls: 0,
+      modestbranding: 1,
+      disablekb: 1,
+    },
+  });
+};
 
 const container = document.getElementById("scroll-wrapper");
 const content = document.getElementById("content-wrapper");
@@ -40,21 +40,15 @@ trigger.addEventListener("click", () => {
     card.classList.add("open");
 
     setTimeout(() => {
+      card.classList.remove("card-3d");
       startCharacterSequence();
     }, 3000);
   }, 3000);
 });
 
 function startCharacterSequence() {
-  const leftItems = document.querySelectorAll(
-    ".card-left-backside-item .character-entry",
-  );
-  const rightItems = document.querySelectorAll(
-    ".card-right-backside-item .character-entry",
-  );
+  const allCharacters = document.querySelectorAll(".character-entry");
   const dialogues = document.querySelectorAll(".speech-bubble");
-
-  const allCharacters = [...leftItems, ...rightItems];
   let delay = 0;
 
   allCharacters.forEach((el, i) => {
