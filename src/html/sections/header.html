@@ -1,112 +1,110 @@
 {% set s = header %}
-<header class="header h-screen">
+<header class="header h-screen overflow-hidden">
   <img
     class="absolute left-0 top-0 h-screen w-full object-cover opacity-70 blur-sm"
     src="./assets/images/bg.webp"
-    alt=""
-    loading="lazy" />
+    alt="" />
 
-  <div
-    class="container flex h-full items-center justify-center xxl:!max-w-[1600px]">
-    <div class="scene hidden xl:block">
-      <div class="trigger-wrapper">
-        <button class="trigger" id="trigger">
-          <img
-            class="absolute left-0 top-0 h-full w-full rounded-full object-cover"
-            src="./assets/images/button.webp"
-            alt=""
-            loading="lazy" />
-        </button>
-      </div>
-
-      <div class="card" id="card">
-        <!-- LEFT PANEL -->
-        <div class="panel card-left">
-          <div class="card-left-frontside">
+  <div class="container h-full xxl:!max-w-[1600px]">
+    <div
+      id="scroll-wrapper"
+      class="h-full items-center justify-center xl:flex smOnly:mx-[-20px] smOnly:overflow-x-auto mdOnly:mx-[-32px] mdOnly:overflow-x-auto">
+      <div
+        id="content-wrapper"
+        class="scene mx-auto !max-w-none xl:block smOnly:!w-[600px]">
+        <div class="trigger-wrapper">
+          <button class="trigger" id="trigger">
             <img
-              class="absolute left-0 top-0 h-full w-full object-fill"
-              src="./assets/images/door-left.webp"
-              alt=""
-              loading="lazy" />
-          </div>
-          <ul
-            class="card-left-backside grid h-full w-full grid-rows-3 gap-[24px] p-[2rem]">
-            {% for leftItem in s.leftSideInfo %}
-            <li
-              class="card-left-backside-item relative rounded-[24px] bg-slate-500">
-              <div
-                class="absolute bottom-0 h-[200px] w-full overflow-hidden xxl:h-[260px]">
-                <img
-                  class="card-left-img character-entry absolute bottom-[-60px] left-0 mx-auto h-[200px] w-auto rounded-full xxl:h-[260px]"
-                  src="./assets/images/{{leftItem.img}}.webp"
-                  alt=""
-                  loading="lazy" />
-              </div>
-
-              <p
-                class="speech-bubble absolute left-[16px] top-[100px] z-[10] min-w-[200px] rounded-[50px] bg-white p-[16px] text-[10px]/[12px] font-semibold text-black xxl:top-[40px] xxl:p-[24px]">
-                {{leftItem.text}}
-              </p>
-            </li>
-            {% endfor %}
-          </ul>
+              class="absolute left-0 top-0 h-full w-full rounded-full object-cover"
+              src="./assets/images/button.webp"
+              alt="" />
+          </button>
         </div>
 
-        <!-- CENTER PANEL -->
-        <div class="panel center overflow-hidden">
-          <div class="glow-effect"></div>
+        <div class="card" id="card">
+          <!-- LEFT PANEL -->
+          <div class="panel card-left">
+            <div class="card-left-frontside">
+              <img
+                class="absolute left-0 top-0 h-full w-full object-fill"
+                src="./assets/images/door-left.webp"
+                alt="" />
+            </div>
+            <ul
+              class="card-left-backside grid h-full w-full grid-rows-3 gap-[60px] p-[16px] xl:gap-[24px] xl:p-[2rem]">
+              {% for leftItem in s.leftSideInfo %}
+              <li
+                class="card-left-backside-item relative rounded-[24px] bg-slate-500">
+                <div
+                  class="absolute bottom-0 h-[150px] w-full overflow-hidden xl:h-[200px] xxl:h-[260px]">
+                  <img
+                    class="card-left-img character-entry absolute bottom-[-50px] left-0 mx-auto h-[150px] w-auto rounded-full xl:bottom-[-60px] xl:h-[200px] xxl:h-[260px]"
+                    src="./assets/images/{{leftItem.img}}.webp"
+                    alt="" />
+                </div>
 
-          <div class="central-image-wrapper">
-            <img
-              class="central-image h-auto w-full object-cover"
-              src="./assets/images/main-img-1.webp"
-              title=""
-              alt=""
-              loading="lazy" />
+                <p
+                  class="speech-bubble absolute left-[16px] z-[10] flex min-w-[200px] items-center justify-center rounded-[50px] bg-white p-[16px] text-[10px]/[12px] font-semibold text-black xl:top-[100px] xxl:top-[40px] xxl:p-[24px]">
+                  {{leftItem.text}}
+                </p>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
-        </div>
 
-        <!-- RIGHT PANEL -->
-        <div class="panel card-right">
-          <div class="card-right-frontside">
-            <img
-              class="absolute left-0 top-0 h-full w-full object-fill"
-              src="./assets/images/door-right.webp"
-              alt=""
-              loading="lazy" />
+          <!-- CENTER PANEL -->
+          <div class="panel center overflow-hidden">
+            <div class="glow-effect"></div>
+
+            <div class="central-image-wrapper">
+              <img
+                class="central-image h-auto w-full object-cover"
+                src="./assets/images/main-img-1.webp"
+                title=""
+                alt="" />
+            </div>
           </div>
 
-          <ul
-            class="card-right-backside grid h-full w-full grid-rows-3 gap-[24px] p-[2rem]">
-            {% for rightItem in s.rightSideInfo %}
-            <li
-              class="card-right-backside-item relative rounded-[24px] bg-slate-500">
-              <div
-                class="absolute bottom-0 h-[200px] w-full overflow-hidden xxl:h-[260px]">
-                <img
-                  class="card-right-img character-entry absolute bottom-[-60px] left-0 mx-auto h-[200px] w-auto rounded-full xxl:h-[260px]"
-                  src="./assets/images/{{rightItem.img}}.webp"
-                  alt=""
-                  loading="lazy" />
-              </div>
+          <!-- RIGHT PANEL -->
+          <div class="panel card-right">
+            <div class="card-right-frontside">
+              <img
+                class="absolute left-0 top-0 h-full w-full object-fill"
+                src="./assets/images/door-right.webp"
+                alt="" />
+            </div>
 
-              <p
-                class="speech-bubble absolute left-[120px] top-[10px] z-[10] min-w-[200px] rounded-[50px] bg-white p-[16px] text-[10px]/[12px] font-semibold text-black xxl:top-[40px] xxl:p-[24px]">
-                {{rightItem.text}}
-              </p>
-            </li>
-            {% endfor %}
-          </ul>
+            <ul
+              class="card-right-backside grid h-full w-full grid-rows-3 gap-[60px] p-[16px] xl:gap-[24px] xl:p-[2rem]">
+              {% for rightItem in s.rightSideInfo %}
+              <li
+                class="card-right-backside-item relative rounded-[24px] bg-slate-500">
+                <div
+                  class="absolute bottom-0 h-[150px] w-full overflow-hidden xl:h-[200px] xxl:h-[260px]">
+                  <img
+                    class="card-right-img character-entry absolute bottom-[-60px] left-0 mx-auto h-[150px] w-auto rounded-full xl:h-[200px] xxl:h-[260px]"
+                    src="./assets/images/{{rightItem.img}}.webp"
+                    alt="" />
+                </div>
+
+                <p
+                  class="speech-bubble absolute left-[16px] z-[10] min-w-[200px] rounded-[50px] bg-white p-[16px] text-[10px]/[12px] font-semibold text-black xl:left-[120px] xl:top-[10px] xxl:top-[40px] xxl:p-[24px]">
+                  {{rightItem.text}}
+                </p>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <p
+            class="speech-bubble-final absolute bottom-[100px] left-[50%] z-[1] max-w-[370px] translate-x-[-50%] rounded-[24px] bg-white p-4 text-[12px]/[14px] font-medium">
+            {{s.text}}
+          </p>
         </div>
-        <p
-          class="speech-bubble-final absolute bottom-[100px] left-[50%] z-[1] max-w-[370px] translate-x-[-50%] rounded-[24px] bg-white p-4 text-[12px]/[14px] font-medium">
-          {{s.text}}
-        </p>
       </div>
     </div>
 
     <p
-      class="relative z-[100] mx-auto rounded-[24px] bg-white p-[32px] text-[24px]/[32px] font-bold xl:hidden">
+      class="relative z-[100] mx-auto hidden rounded-[24px] bg-white p-[32px] text-[24px]/[32px] font-bold">
       Открой с ПК нах!
     </p>
   </div>

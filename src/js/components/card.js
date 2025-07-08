@@ -1,18 +1,25 @@
 let player;
 
 // Когда API загружено — создаём плеер
-window.onYouTubeIframeAPIReady = () => {
-  window.player = new YT.Player("ytPlayer", {
-    videoId: "C2LWupzMMYE",
-    playerVars: {
-      loop: 1,
-      playlist: "C2LWupzMMYE",
-      controls: 0,
-      modestbranding: 1,
-      disablekb: 1,
-    },
-  });
-};
+// window.onYouTubeIframeAPIReady = () => {
+//   window.player = new YT.Player("ytPlayer", {
+//     videoId: "C2LWupzMMYE",
+//     playerVars: {
+//       loop: 1,
+//       playlist: "C2LWupzMMYE",
+//       controls: 0,
+//       modestbranding: 1,
+//       disablekb: 1,
+//     },
+//   });
+// };
+
+const container = document.getElementById("scroll-wrapper");
+const content = document.getElementById("content-wrapper");
+
+const scrollTo = (content.scrollWidth - container.clientWidth) / 2;
+container.scrollLeft = scrollTo;
+content.scrollLeft = scrollTo;
 
 const trigger = document.getElementById("trigger");
 const card = document.getElementById("card");
