@@ -1,13 +1,6 @@
 /* VENDORS */
 /* @import "./vendors/fonts.css"; */
 @import "./vendors/tailwind.css";
-@import "./vendors/intlTelInput.css";
-
-/* COMPONENTS */
-@import "./components/modal.css";
-@import "./components/form.css";
-@import "./components/input.css";
-@import "./components/notify.css";
 
 /* SECTIONS */
 @import "./sections/header.css";
